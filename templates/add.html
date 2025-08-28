@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}新增{% endblock %}
+
+{% block head %}
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="{% static 'js/add.js' %}"></script>
+{% endblock %}
+
+{% block main %}
+    <h3>新增應徵資訊</h3>
+    <hr>
+    <div class="mt-3 p-3">
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <label class="form-label">職位名稱</label>
+                    <input type="text" name="title" class="form-control" required>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label class="form-label">公司名稱</label>
+                    <input type="text" name="company" class="form-control" required>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label class="form-label">狀態</label>
+                    <select name="status" class="form-select" id="status-select" required>
+                        {% for status in statuses %}
+                            <option value="{{ status.id }}">{{ status.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label class="form-label">投遞時間</label>
+                    <input type="date" name="applied_at" class="form-control">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">內容</label>
+                <textarea name="content" class="form-control" placeholder="更多詳細資訊可在此輸入"></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">職位頁面</label>
+                <input type="url" name="job_link" class="form-control" placeholder="例如該職位的104頁面" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">公司官網</label>
+                <input type="url" name="company_link" class="form-control">
+            </div>
+            <div class="mb-3 text-end">
+                <button class="btn btn-primary" id="submit-btn">新增</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

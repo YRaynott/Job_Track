@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}說明{% endblock %}
+
+{% block main %}
+    <div class="container py-5">
+        <h2 class="mb-4">📘 求職追蹤 App 使用說明</h2>
+        <div class="card p-4 mb-4 shadow-sm">
+            <h4>🔹 1. 整體</h4>
+            <p>✔️ 首頁會根據「投遞日期」由新至舊排序，幫助你掌握最近進度。</p>
+            <p>✔️ 所有新增或修改職缺功能都需要先登入。</p>
+            <p>🚫 沒有設返回鍵是因為上方有導航條喔～想去哪直接點吧 ✧◝(⁰▿⁰)◜✧</p>
+        </div>
+        <div class="card p-4 mb-4 shadow-sm">
+            <h4>🔹 2. 新增職缺</h4>
+            <p>點擊左上角「<strong>新增</strong>」按鈕後，請輸入：</p>
+            <ul>
+                <li>📌 職位名稱</li>
+                <li>🏢 公司名稱</li>
+                <li>🔗 網址連結（選填）</li>
+                <li>📝 備註（內容 / 內推 / 注意事項...）</li>
+            </ul>
+            <p>儲存後會自動回到首頁，馬上看到剛建立的職缺喔！</p>
+        </div>
+        <div class="card p-4 mb-4 shadow-sm">
+            <h4>🔹 3. 修改狀態與投遞時間</h4>
+            <p>每一筆職缺都可以點進去「詳情頁」中編輯：</p>
+            <ul>
+                <li>✏️ <strong>狀態</strong>（已投遞 / 面試中 / 已錄取等）</li>
+                <li>📅 <strong>日期</strong>（可代表投遞或面試日期）</li>
+            </ul>
+            <p class="text-muted">* 作者覺得其他項目其實不太需要改啦(´-ω-｀)...但你如果有強烈需求也可以跟我說！</p>
+        </div>
+        <div class="card p-4 mb-4 shadow-sm">
+            <h4>🔹 4. 搜尋功能</h4>
+            <p>首頁上方搜尋框支援 <strong>公司名稱</strong> 與 <strong>職位名稱</strong> 的關鍵字查詢。</p>
+            <p>可以快速過濾出你要找的資料，不用滑來滑去！</p>
+        </div>
+        <div class="card p-4 mb-4 shadow-sm">
+            <h4>💡 常見問題（FAQ）</h4>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse1">
+                            📅 為什麼沒有面試時間只有投遞時間？
+                        </button>
+                    </h2>
+                    <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            可以自行把「投遞時間」當作面試日期使用，並將狀態設為「面試中」來進行追蹤。<br>
+                            若你希望有更詳細的「面試時間欄位」，也歡迎回饋給作者喔 ✉️
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse2">
+                            ❌ 為什麼沒有「已拒絕」這個狀態？
+                        </button>
+                    </h2>
+                    <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            為了避免負面情緒，系統目前沒有強制紀錄被拒結果。你可以選擇保留狀態不變，或用備註記下結果。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-light rounded p-4 mt-5 shadow-sm text-center">
+            <h5 class="mb-3">📬 聯絡作者 / 提出建議</h5>
+            <p>如果你對這個 App 有想法、遇到錯誤，或是希望新增功能，都可以寄信給我：</p>
+            <p>
+                <strong>📧 Email：</strong>
+                <a href="mailto:dev.test.ver@gmail.com" class="link-primary text-decoration-none">dev.test.ver@gmail.com</a>
+            </p>
+            <p class="text-muted small">我會盡快回覆（除非剛好在找工作或面試中 😅）</p>
+            <p class="text-muted small">🔒 你的信箱和回饋內容不會被紀錄或分享，請安心使用。</p>
+
+        </div>
+
+    </div>
+{% endblock %}

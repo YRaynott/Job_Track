@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}註冊{% endblock %}
+
+{% block head %}
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="{% static 'js/register.js' %}"></script>
+{% endblock %}
+
+{% block main %}
+    <div class="d-flex justify-content-center my-5" style="max-width: 900px; margin-left: auto; margin-right: auto;">
+        <div class="row w-100">
+            <!-- 左邊 GIF -->
+            <div class="col-md-6 d-flex align-items-center justify-content-center bg-light p-4">
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnhoMnI2djR4NTF2ZDlvcmEwMmw3d2VtbXF6cW9lNHc0MWd0a3hycyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/PUyO4KmKWX5D2MzH3w/giphy.gif" alt="歡迎註冊" class="img-fluid"/>
+            </div>
+            <!-- 右邊註冊表單 -->
+            <div class="col-md-6 p-5">
+                <h3 class="mb-4">註冊  (◍•ᴗ•◍)ゝ</h3>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="username" class="form-label">用戶名稱</label>
+                        <input id="username" type="text" name="username" class="form-control" placeholder="用戶名稱" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">電子郵件</label>
+                        <input id="email" type="email" name="email" class="form-control" placeholder="電子郵件" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="captcha" class="form-label">驗證碼</label>
+                        <div class="input-group mb-3">
+                            <input id="captcha" type="text" class="form-control" placeholder="驗證碼" name="captcha"
+                                   aria-label="驗證碼" aria-describedby="captcha-btn" required>
+                            <button class="btn btn-outline-secondary" type="button" id="captcha-btn">獲取驗證碼</button>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">密碼</label>
+                        <input id="password" type="password" name="password" class="form-control" placeholder="密碼" required>
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-primary w-100" type="submit">立即註冊</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

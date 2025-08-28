@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE
+.vscode/
+.idea/
+
+# 虛擬環境（如果放在專案內）
+venv/
+env/
+
+# Django
+*.log
+
+# Secret
+.env
+
+# Static collect
+staticfiles/
+
+# SQLite (備用)
+*.sqlite3
+*.db

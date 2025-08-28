@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}job詳情{% endblock %}
+
+{% block head %}
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="{% static 'js/detail.js' %}"></script>
+{% endblock %}
+
+{% block main %}
+    <h3>{{ job.title }}</h3>
+    <h5>{{ job.company }}</h5>
+    <hr>
+    <div class="m-3">
+        <!-- 可供修改的狀態、日期 -->
+        <div class="card p-3 mb-3 shadow-sm">
+            <form action="" method="post">
+                {% csrf_token %}
+                <!-- 外層 row 包裹 -->
+                <div class="row align-items-end">
+                    <div class="col-md-5 mb-3">
+                        <label class="form-label">狀態</label>
+                        <select name="status" class="form-select" required>
+                            {% for status in statuses %}
+                                <option value="{{ status.id }}" {% if job.status.id == status.id %}selected{% endif %}>
+                                    {{ status.name }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-5 mb-3">
+                        <label class="form-label">投遞時間</label>
+                        <input type="date" name="applied_at" class="form-control"
+                               value="{{ job.applied_at|date:'Y-m-d' }}">
+                    </div>
+                    <div class="col-md-2 mb-3 d-grid position-relative">
+                        <!-- alert 容器，占空間 -->
+                        <div style="height: 60px; position: relative;">
+                            <div id="liveAlertPlaceholder" class="position-absolute top-0 start-0 w-100"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-sm" id="update-btn">更新</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="mb-3">
+            <h5 class="mb-2">備註 / 內容</h5>
+            <p class="text-muted" style="white-space: pre-line;">{{ job.content|linebreaksbr }}</p>
+        </div>
+        <!-- 連結 -->
+        <div class="d-flex gap-3 mt-3">
+            <a href="{{ job.job_link }}" class="btn btn-sm btn-warning" target="_blank">求職頁面</a>
+            {% if job.company_link %}
+                <a href="{{ job.company_link }}" class="btn btn-sm btn-success" target="_blank">公司官網</a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

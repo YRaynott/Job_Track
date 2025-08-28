@@ -1,0 +1,6 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+body{
+    background-color: lightblue;
+    font-family: 'cwTeXYen', 'Noto Sans TC', sans-serif;
+}
