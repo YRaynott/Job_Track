@@ -82,7 +82,6 @@ DATABASES = {
     "default": dj_database_url.config(
         default=config('MYSQL_PUBLIC_URL'),
         conn_max_age=600,
-        ssl_require=True,  # Railway Public URL 要求開啟 SSL
     )
 }
 
