@@ -80,7 +80,7 @@ WSGI_APPLICATION = "job_app.wsgi.application"
 
 DATABASES = {
     "default": dj_database_url.config(
-        default=os.environ.get("DATABASE_URL", "mysql://root:uQeuhARbSOKbwxaJOCKNMjiGxyBPSldj@turntable.proxy.rlwy.net:27322/railway"),
+        default=config('MYSQL_PUBLIC_URL'),
         conn_max_age=600,
         ssl_require=True,  # Railway Public URL 要求開啟 SSL
     )
@@ -138,6 +138,3 @@ EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool, default=True)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-
-# 帳號:dev.test.ver@gmail.com
-# 密碼:Test111111@
