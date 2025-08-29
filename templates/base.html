@@ -29,9 +29,7 @@
             <!-- 登入註冊/登出 ui -->
             {% if user.is_authenticated %}
                 <div class="dropdown text-end">
-                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="{% static 'image/' %}" class="rounded-circle" style="width: 50px">
-                    </a>
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></a>
                     <ul class="dropdown-menu text-small">
                         <li><a class="dropdown-item" href="{% url 'jobauth:logout' %}">登出</a></li>
                     </ul>
