@@ -9,7 +9,7 @@ from .models import Job, JobStatus
 from .forms import JobAddForm, JobEditForm
 
 def index(request):
-    jobs = Job.objects.all()
+    jobs = Job.objects.filter(user=request.user)
     return render(request, 'index.html', context={'jobs': jobs})
 
 def help(request):
