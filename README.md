@@ -17,6 +17,14 @@
 
 ---
 
+## 實際操作
+
+登入後的畫面回如下圖所示，也是首頁的樣式，會顯示出先前新增過的應徵職位，如第一次使用還未新增的話空白是正常的。
+<img width="958" height="407" alt="image" src="https://github.com/user-attachments/assets/448a5ae4-d5ed-4e9a-ad6a-cda3389dfab6" />
+
+
+---
+
 ## ⚙️ 技術細節
 
 - requirements.txt
