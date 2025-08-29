@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool, default=True)
 
-CSRF_TRUSTED_ORIGINS = ['job-track-ibja.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://job-track-ibja.onrender.com']
 ALLOWED_HOSTS = ['job-track-ibja.onrender.com']
 
 
